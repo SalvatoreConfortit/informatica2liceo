@@ -3,7 +3,7 @@ let tareas = [
   
 ]
 let tabla = document.querySelector('#tareas')
-function llenar() {
+function llenartabla() {
     let contenidoTabla = '<tr><th>Asignatura</th><th>Descripción</th><th>Fecha</th></tr>'
     for (tarea of tareas){
         contenidoTabla = contenidoTabla + `<tr><td>${tarea.Asignatura}</td><td>${tarea.Descripción}</td>
@@ -13,7 +13,7 @@ function llenar() {
     tabla.innerHTML = contenidoTabla;
        
 }
-llenar();
+llenartabla();
 let forme = document.querySelector("#adjuntartarea")
 function addTarea(){
     let Asignatu = document.querySelector("input[name=Asignatura").value
@@ -24,7 +24,13 @@ function addTarea(){
     console.log(nuevatarea)
 
     tareas.push(nuevatarea)
-  llenar()
+ localStorage.setItem("tareas",JSON.stringify(nuevatarea))
+  llenartabla()
     return false;
 }
 forme.onsubmit = addTarea
+let borrar =document.querySelector("#contenidoTabla")
+borrar.onclick = Eliminar
+function Eliminar(){
+    contenidoTabla.style.size = 0  
+}
