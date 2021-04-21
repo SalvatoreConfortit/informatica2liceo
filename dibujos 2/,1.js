@@ -9,3 +9,12 @@ ctx.stroke()
 }
 for(let x = 50; x < 400; x = x+50){
     peon(x,y)}
+ctx.strokeStyle ="black"
+ctx.fillStyle = "black"
+function peon1(x,y){
+    ctx.arc(x,200,30, Math.PI,0)
+    ctx.arc(x,170,15,0,2* Math.PI)
+    ctx.stroke()
+    }
+    for(let x = 50; x < 400; x = x+50){
+        peon1(x,y)}
